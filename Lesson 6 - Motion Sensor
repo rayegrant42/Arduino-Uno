@@ -1,0 +1,26 @@
+// Pin variables
+int ledPin = 8;
+int buzzer Pin = 9;
+int tiltPin = 10;
+
+
+
+
+void setup() {
+  // put your setup code here, to run once:
+  //Set Up Pins
+  pinMode (ledPin, OUTPUT);
+  pinMode (buzzerPin, OUTPUT);
+  pinMode (tiltPin, INPUT_PULLUP);
+
+  // Make sure the LED and buzzer are turned off
+  digitalWrite(ledPin, LOW);
+  digitalWrite(buzzerPin, LOW)
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  
+
+}
