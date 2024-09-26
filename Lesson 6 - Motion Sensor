@@ -23,7 +23,7 @@ void loop() {
   // put your main code here, to run repeatedly:
 
   //Monitor the tilt switch.
-  //If the input goes high, it means tah the contact has been broken, and 
+  //If the input goes high, it means that the contact has been broken, and 
   //the internal pullup resistor is now able to pull the input to HIGH.
   //Notice that this acts as a trigger.  Once we see a HIGH signal on the 
   //tilt switch, we activate the LED and teh buzzer, but we never set
