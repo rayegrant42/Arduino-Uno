@@ -1,0 +1,39 @@
+// Pin variables
+int ledPin = 8;
+int buzzerPin = 9;
+int tiltPin = 10;
+
+// Variable to "latch" the state after the tilt switch is triggered
+bool tiltTriggered = false;
+
+void setup() {
+  // Set up pins
+  pinMode(ledPin, OUTPUT);
+  pinMode(buzzerPin, OUTPUT);
+  pinMode(tiltPin, INPUT_PULLUP);
+
+  // Make sure the LED and buzzer are turned off
+  digitalWrite(ledPin, LOW);
+  digitalWrite(buzzerPin, LOW);
+}
+
+void loop() {
+  // Check if the tilt switch is HIGH (triggered)
+  if (digitalRead(tiltPin) == HIGH) {
+    tiltTriggered = true; // Set latch variable to true when tiltPin is HIGH
+  }
+
+  // If tilt was triggered, keep the LED and buzzer running
+  if (tiltTriggered) {
+    digitalWrite(ledPin, HIGH);  // Turn on LED
+
+    // Loop the buzzer
+    digitalWrite(buzzerPin, HIGH);  // Turn buzzer on
+    delay(500);                     // Wait for 500 ms
+    digitalWrite(buzzerPin, LOW);   // Turn buzzer off
+    delay(500);                     // Wait for 500 ms
+  }
+
+  // Optionally, add a condition to reset the system (e.g., when a button is pressed)
+  // Example: You could use another input pin to reset the tiltTriggered state
+}
